@@ -1,19 +1,29 @@
-import { ADDTODO, COMPLETE, EDITTODO } from './ActionsTypes';
+import { ADDTODO, COMPLETE, DELETE, EDITTODO } from './ActionsTypes';
 
-export const add = () => {
+export const add = (newTask) => {
 	return {
-		type : ADDTODO
+		type    : ADDTODO,
+		payload : newTask
 	};
 };
 
-export const edit = () => {
+export const edit = (editTodo) => {
 	return {
-		type : EDITTODO
+		type    : EDITTODO,
+		payload : editTodo
 	};
 };
 
-export const comp = () => {
+export const comp = (id) => {
 	return {
-		type : COMPLETE
+		type    : COMPLETE,
+		payload : id
+	};
+};
+
+export const del = (id) => {
+	return {
+		type    : DELETE,
+		payload : id
 	};
 };
